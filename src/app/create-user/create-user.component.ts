@@ -2,21 +2,21 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-create-user',
+  templateUrl: './create-user.component.html',
+  styleUrls: ['./create-user.component.css']
 })
-export class LoginComponent {
-
+export class CreateUserComponent {
   constructor(private fb:FormBuilder) {}
 
 
-  loginForm = this.fb.group({
+  createUserForm = this.fb.group({
     password: ['',[Validators.required,Validators.minLength(8)]],
+    username: ['',[Validators.required,Validators.maxLength(10)]],
     email: ['',[Validators.required,Validators.email]]
   })
   get f(): { [key:string]: AbstractControl } {
-    return this.loginForm.controls;
+    return this.createUserForm.controls;
   }
 
 }
