@@ -35,7 +35,7 @@
             </mat-form-field>
         </form>
         <div class="buttons-container">
-            <button mat-raised-button class="login-button"  [disabled]="createUserForm.invalid">
+            <button (click)="createAccount()" mat-raised-button class="login-button"  [disabled]="createUserForm.invalid">
                 Kaydol
             </button>
             <p>Veya</p>
