@@ -15,4 +15,9 @@ export class UserService extends BaseService {
    {
      return this.postReq('/users',userObj)
    }
+
+   public getUser(email:any)
+   {
+     return this.getReq('/users?email='+email)
+   }
 }
