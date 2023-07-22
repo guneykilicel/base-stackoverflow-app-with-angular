@@ -14,14 +14,20 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BaseService } from './services/base.service';
-import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HomeComponent } from './home/home.component';
+import {MatCardModule} from '@angular/material/card';
+import { SolutionsComponent } from './solutions/solutions.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    HomeComponent,
+    SolutionsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [BaseService],
   bootstrap: [AppComponent]
