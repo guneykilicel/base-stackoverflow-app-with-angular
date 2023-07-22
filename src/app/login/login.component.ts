@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class LoginComponent {
 
-  constructor(private fb:FormBuilder, public userService: UserService, private snackbar: MatSnackBar) {}
+  constructor(private fb:FormBuilder, public userService: UserService, private snackbar: MatSnackBar, private router: Router) {}
 
 
   loginForm = this.fb.group({
@@ -27,6 +28,14 @@ export class LoginComponent {
       //console.log(res);
       if(res.length == 0) {
         this.snackbar.open('Böyle bir hesap bulunamadı', 'Tamam');
+      } else {
+        if (res[0].password === this.loginForm.value.password) {
+          this.userService.user = res[0]; // kullanıcıyı burada aldık
+          localStorage.setItem('user',JSON.stringify(res[0]));
+          this.router.navigateByUrl('/home');
+        } else {
+          this.snackbar.open('Böyle bir hesap bulunamadı','Tamam');
+        }
       }
     })
   }
