@@ -48,7 +48,9 @@
         {
           "username": "kuzey",
           "solution": "test",
-          "plus": [],
+          "plus": [
+            2
+          ],
           "minus": []
         }
       ],
@@ -86,6 +88,37 @@
       "question": "testtt",
       "solutions": [],
       "id": 5
+    },
+    {
+      "username": "guney",
+      "question": "deneme sorumuz",
+      "solutions": [
+        {
+          "username": "guney",
+          "solution": "kendi soruma kendi cevabım",
+          "plus": [
+            2
+          ],
+          "minus": []
+        },
+        {
+          "username": "guney",
+          "solution": "kendi soruma kendi cevabım 2 \n",
+          "plus": [
+            4
+          ],
+          "minus": [
+            2
+          ]
+        },
+        {
+          "username": "irem",
+          "solution": "güneyin sorusuna irem'in cevabı",
+          "plus": [],
+          "minus": []
+        }
+      ],
+      "id": 6
     }
   ]
 }

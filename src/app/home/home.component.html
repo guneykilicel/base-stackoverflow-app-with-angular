@@ -4,7 +4,6 @@
       <mat-form-field appearance="fill">
         <textarea [(ngModel)]="question" matInput cdkTextareaAutosize cdkAutosizeMinRows="5" placeholder="Sorunuzu sorun..."></textarea>
       </mat-form-field>
-      {{question}}
       <div class="new-post-actions-container">
         <button (click)="post()" [disabled]="question.trim() == ''" mat-raised-button class="post-button">Sor</button>
       </div>
